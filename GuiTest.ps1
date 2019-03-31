@@ -1,13 +1,10 @@
 ﻿<# 
     form creator: poshgui.com
 #>
+. $PSScriptRoot\display-test.ps1
 
 Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
-
-Function Display-Test{
-    return 'This is a test'
-}
 
 Function Create-Gui{
     $EnvPrep                         = New-Object system.Windows.Forms.Form
@@ -18,9 +15,9 @@ Function Create-Gui{
     $EnvInput                        = New-Object system.Windows.Forms.TextBox
     $EnvInput.multiline              = $false
     $EnvInput.width                  = 100
-    $EnvInput.height                 = 20
+    $EnvInput.height                 = 24
     $EnvInput.Location               = New-Object System.Drawing.Point(12,12)
-    $EnvInput.Font                   = 'Microsoft Sans Serif,10'
+    $EnvInput.Font                   = 'Microsoft Sans Serif,20'
 
     $Env                             = New-Object system.Windows.Forms.Label
     $Env.text                        = "Env"
@@ -32,7 +29,7 @@ Function Create-Gui{
 
     $Run                             = New-Object system.Windows.Forms.Button
     $Run.text                        = "Run"
-    $Run.width                       = 60
+    $Run.width                       = 70
     $Run.height                      = 30
     $Run.location                    = New-Object System.Drawing.Point(12,56)
     $Run.Font                        = 'Microsoft Sans Serif,10'
